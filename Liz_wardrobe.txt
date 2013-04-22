@@ -1,0 +1,9 @@
+pants|black|denim|solid|casual|long
+pants|blue|denim|solid|casual|long
+pants|red|cotton|solid|snappy|long
+pants|black|cotton|solid|snappy|long
+shirt|white|cotten|solid|dressy|long
+
+
+
+

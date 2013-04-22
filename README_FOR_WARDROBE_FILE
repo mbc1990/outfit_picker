@@ -1,0 +1,60 @@
+Wardrobe files should list attributes in the following order, delineated with pipes.
+GARMENT|COLOR(s)|FABRIC|PATTERN|FORMALNESS|SKIN_COVER
+If there are multiple values for a single attribute (like color), those are separated with spaces.
+
+Options for colors are:
+ -blue
+ -black
+ -brown
+ -red
+ -pink
+ -orange
+ -yellow
+ -white
+ -tan
+ -cream
+ -grey
+ -purple
+ -green
+ -gold
+ -silver
+
+Options for garments are:
+ -pants
+ -shirt
+ -vest
+ -scarf
+ -jewelry
+ -socks
+ -gloves
+ -hat
+
+Options for fabric are:
+ -silk
+ -cotton
+ -denim
+ -leather
+ -linen
+ -wool
+ -polyester
+ -nylon
+
+Options for pattern are:
+ -complimentary
+ -contrasting
+ -solid
+
+Options for formalness are:
+ -exercise
+ -very casual
+ -casual
+ -snappy
+ -dressy
+ -formal
+
+Options for skin cover are:
+ -long
+ -medium
+ -short
+ -very short
+ -n/a

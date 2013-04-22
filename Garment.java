@@ -1,7 +1,7 @@
 package outfitPicker;
 import java.util.*;
 
-public class Garment{
+public class Garment implements AttributeConstants {
     protected String name;
-    protected ArrayList<Attribute> attributes;
+    int[] attrs = new int[ATTR_ARRAY_LEN];
 }
