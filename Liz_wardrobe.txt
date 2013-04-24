@@ -1,9 +1,5 @@
-pants|black|denim|solid|casual|long
-pants|blue|denim|solid|casual|long
-pants|red|cotton|solid|snappy|long
-pants|black|cotton|solid|snappy|long
-shirt|white|cotten|solid|dressy|long
-
-
-
-
+Long black jeans|pants|black|denim|solid|casual|long
+Long faded blue jeans|pants|blue|denim|solid|casual|long
+Long, soft red pants|pants|red|cotton|solid|snappy|long
+Long, soft black pants|pants|black|cotton|solid|snappy|long
+Pretty collared white shirt|shirt|white|cotton|solid|dressy|long

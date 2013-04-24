@@ -66,27 +66,28 @@ public class Constants {
     //jewelery
 
     //number of attributes--so that we know how long to make our attribute arrays
-    public final static int NUM_ATTRS = 37;
-    public final static int ATTR_ARRAY_LEN = 38;
+    public final static int NUM_ATTRS = 40;
+    public final static int ATTR_ARRAY_LEN = 41;
 
     //index in array indicating the domain of the garment
-    public final static int BODY_PART = 1;
+    public final static int BODY_PART = 0;
 
     //possible values for the BODY_PART index
     //	these values are not related to the attribute values
-    public final static int LEGS = 100;
-    public final static int FEET = 101;
-    public final static int TORSO = 102;
-    public final static int WAIST = 103;
-    public final static int HANDS = 104;
-    public final static int NECK = 105;
-    public final static int HEAD = 106;
-    public final static int JEWELRY = 107;
+    public final static int LEGS = 0;
+    public final static int FEET = 1;
+    public final static int TORSO = 2;
+    public final static int WAIST = 3;
+    public final static int HANDS = 4;
+    public final static int NECK = 5;
+    public final static int HEAD = 6;
+    public final static int JEWELRY = 7;
 
     /**************************/
     /******ARRAY INDICES*******/
     /**************************/
     /* COLORS */
+    public final static int LIGHT_BLUE = 1;
     public final static int BLUE = 2;
     public final static int BLACK = 3;
     public final static int BROWN = 4;
@@ -143,4 +144,9 @@ public class Constants {
     public final static int UNDERWEAR = 36;
     public final static int NORMALWEAR = 37;
     public final static int OUTERWEAR = 38;
+
+    /* VOLUME */
+    public final static int TIGHT = 39;
+    public final static int LOOSE = 40;
+    public final static int VERY_LOOSE = 41;
 }
