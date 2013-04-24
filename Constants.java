@@ -149,4 +149,16 @@ public class Constants {
     public final static int TIGHT = 39;
     public final static int LOOSE = 40;
     public final static int VERY_LOOSE = 41;
+
+    /*****************************/
+    /**CONSTANTS FOR FILE PARSING*/
+    /*****************************/
+    public final static int NUM_COLUMNS = 7;
+    public final static int NAME_COLUMN = 0;
+    public final static int GARMENT_COLUMN = 1;
+    public final static int COLOR_COLUMN = 2;
+    public final static int FABRIC_COLUMN = 3;
+    public final static int PATTERN_COLUMN = 4;
+    public final static int FORMALNESS_COLUMN = 5;
+    public final static int SKIN_COVER_COLUMN = 6;
 }

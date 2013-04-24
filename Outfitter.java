@@ -6,11 +6,11 @@ public class Outfitter {
 
     public static void main(String[] args) {
         //load input wardrobe file
-        if(args.length < 2) {
+        if(args.length < 1) {
             System.out.println("Usage: >java Outfitter wardrobe");
             System.exit(1);
         }
-        Wardrobe w = new Wardrobe(args[1]);
+        Wardrobe w = new Wardrobe(args[0]);
         boolean done = false;
         Scanner s = new Scanner(System.in);
 
