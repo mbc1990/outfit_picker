@@ -1,12 +1,12 @@
 
 public class Conflict {
 
-    private static int[][] conflict_matrix = new int[6][6];
+    private static int[][] conflict_matrix = ConflictMatrix.matrix;
     private static int num_attr = 6;
 
     //for testing purposes
     public static void main(String[] args) {
-        System.out.println("hello conflicts");
+/*        System.out.println("hello conflicts");
         for(int i = 0; i < 6; i++) {
             for(int j = 0; j < 6; j++) {
                 conflict_matrix[i][j] = 0;
@@ -48,20 +48,20 @@ public class Conflict {
         bp[5] = 0;
 
         System.out.println(arrConflicts(bfp,bp) + " conflicts");
-
+*/
     }
 
     //returns the number of conflicts between these two garments
     //this will pass the arrays from the garments to the arr conflicts method
     public int binaryConflicts(Garment g1, Garment g2) {
-        return 1;
+        return arrConflicts(g1.attrs, g2.attrs);
     }
 
     //returns the number of conflicts in the arrays
     public static int arrConflicts(int[] a1, int[] a2) {
         int num_conf = 0;
-        for(int i = 1; i < num_attr; i++) {
-            for(int j = i; j < num_attr; j++) {
+        for(int i = 1; i < Constants.ATTR_ARRAY_LEN; i++) {
+            for(int j = i; j < Constants.ATTR_ARRAY_LEN; j++) {
                 if(((a1[i] == 1 && a2[j] == 1) || (a1[j] ==1 && a2[i] ==1)) && conflict_matrix[i][j] == 1) {
                     num_conf++;
                     System.out.println(i+" in ar1 conflicts with "+j+" in ar2");
