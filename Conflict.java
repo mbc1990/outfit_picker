@@ -54,7 +54,7 @@ public class Conflict {
     //returns the number of conflicts between these two garments
     //this will pass the arrays from the garments to the arr conflicts method
     public int binaryConflicts(Garment g1, Garment g2) {
-        return 0;
+        return 1;
     }
 
     //returns the number of conflicts in the arrays
