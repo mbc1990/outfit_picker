@@ -1,6 +1,5 @@
-package outfitPicker;
 
-public class Wardrobe implements AttributeConstants {
+public class Wardrobe {
    
 
     //arraylist of garment for each body part (class with primative array of attributes and string with name)
