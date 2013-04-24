@@ -1,5 +1,5 @@
 public interface ISolver{
 
-    public static Garment[] getOutfit(Wardrobe w);
+//    public static Garment[] getOutfit(Wardrobe w);
 
 }
