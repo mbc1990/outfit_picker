@@ -66,8 +66,8 @@ public class Constants {
     //jewelery
 
     //number of attributes--so that we know how long to make our attribute arrays
-    public final static int NUM_ATTRS = 40;
-    public final static int ATTR_ARRAY_LEN = 41;
+    public final static int NUM_ATTRS = 44;
+    public final static int ATTR_ARRAY_LEN = 45;
 
     //index in array indicating the domain of the garment
     public final static int BODY_PART = 0;
@@ -76,12 +76,14 @@ public class Constants {
     //	these values are not related to the attribute values
     public final static int LEGS = 0;
     public final static int FEET = 1;
-    public final static int TORSO = 2;
-    public final static int WAIST = 3;
-    public final static int HANDS = 4;
-    public final static int NECK = 5;
-    public final static int HEAD = 6;
-    public final static int JEWELRY = 7;
+    public final static int SHOES = 2; //so that you can wear socks AND shoes
+    public final static int TORSO = 3;
+    public final static int CHEST = 4; //for vests
+    public final static int WAIST = 5;
+    public final static int HANDS = 6;
+    public final static int NECK = 7;
+    public final static int HEAD = 8;
+    public final static int JEWELRY = 9;
 
     /**************************/
     /******ARRAY INDICES*******/
@@ -120,40 +122,42 @@ public class Constants {
     //complimentary ( polka dots, stripes, subtle prints, very small prints, 
     //		      prints with similar colors, etc.)
     public final static int CONTRASTING = 25;
-    public final static int COMPLIMENTARY = 25;
+    public final static int COMPLIMENTARY = 26;
+    public final static int SOLID = 27;
     
     /* "FORMALNESS" */
-    public final static int EXERCISE = 26;
-    public final static int VERY_CASUAL = 27;
-    public final static int CASUAL = 28;
-    public final static int SNAPPY = 29;
-    public final static int DRESSY = 30;
-    public final static int FORMAL = 31;
+    public final static int EXERCISE = 28;
+    public final static int VERY_CASUAL = 29;
+    public final static int CASUAL = 30;
+    public final static int SNAPPY = 31;
+    public final static int DRESSY = 32;
+    public final static int FORMAL = 33;
 
     /* SKIN COVER */
     //long (long pants, long sleeves, long socks)
     //medium (capris, 3/4 length)
     //short (shorts, short sleaves)
     //very short (sleeveless)
-    public final static int LONG = 32;
-    public final static int MEDIUM = 33;
-    public final static int SHORT = 34;
-    public final static int VERY_SHORT = 35;
+    public final static int LONG = 34;
+    public final static int MEDIUM = 35;
+    public final static int SHORT = 36;
+    public final static int VERY_SHORT = 37;
 
     /* UNDER/NORMAL/OUTERWEAR */
-    public final static int UNDERWEAR = 36;
-    public final static int NORMALWEAR = 37;
-    public final static int OUTERWEAR = 38;
+    public final static int UNDERWEAR = 38;
+    public final static int NORMALWEAR = 39;
+    public final static int OUTERWEAR = 40;
 
     /* VOLUME */
-    public final static int TIGHT = 39;
-    public final static int LOOSE = 40;
-    public final static int VERY_LOOSE = 41;
+    public final static int TIGHT = 41;
+    public final static int NORMAL = 42;
+    public final static int LOOSE = 43;
+    public final static int VERY_LOOSE = 44;
 
     /*****************************/
     /**CONSTANTS FOR FILE PARSING*/
     /*****************************/
-    public final static int NUM_COLUMNS = 7;
+    public final static int NUM_COLUMNS = 8;
     public final static int NAME_COLUMN = 0;
     public final static int GARMENT_COLUMN = 1;
     public final static int COLOR_COLUMN = 2;
@@ -161,4 +165,5 @@ public class Constants {
     public final static int PATTERN_COLUMN = 4;
     public final static int FORMALNESS_COLUMN = 5;
     public final static int SKIN_COVER_COLUMN = 6;
+    public final static int VOLUME_COLUMN = 7;
 }

@@ -1,5 +1,5 @@
 Wardrobe files should list attributes in the following order, delineated with pipes.
-NAME|GARMENT|COLOR(s)|FABRIC|PATTERN|FORMALNESS|SKIN_COVER
+NAME|GARMENT|COLOR(s)|FABRIC|PATTERN|FORMALNESS|SKIN_COVER|VOLUME
 If there are multiple values for a single attribute (like color), those are separated with spaces.
 
 
@@ -7,11 +7,14 @@ Name is for human consumption.
 
 Options for garments are:
  -pants
+ -shorts
+ -skirt
  -shirt
  -vest
  -scarf
  -jewelry
  -socks
+ -shoes
  -gloves
  -hat
 
@@ -61,3 +64,9 @@ Options for skin cover are:
  -short
  -very short
  -n/a
+
+Options for volume are:
+ -tight
+ -normal
+ -loose
+ -very loose

@@ -25,6 +25,7 @@ public class ConflictMatrix {
 	matrix[Constants.CASUAL][Constants.FORMAL] = 1;
 	matrix[Constants.SNAPPY][Constants.FORMAL] = 1;
 	matrix[Constants.VERY_CASUAL][Constants.DRESSY] = 1;
+	matrix[Constants.VERY_SHORT][Constants.LONG] = 1;
     }
 
 }
