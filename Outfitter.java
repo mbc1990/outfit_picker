@@ -26,7 +26,7 @@ public class Outfitter {
             }
             switch(o) {
                 case 0:
-                    System.out.println("woo");
+                    System.exit(0);
                     break;
                 case 1:
                     System.out.println("You picked the brute force method");
@@ -67,7 +67,7 @@ public class Outfitter {
     }
 
     public static void printOptions() {
-        System.out.println("0- Suggest an outfit. 1- Exit.");
+        System.out.println("0 - exit \n 1 - Generate an outfit via brute force.");
         System.out.print("Please enter a number: ");
     }
 

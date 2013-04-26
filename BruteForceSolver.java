@@ -13,21 +13,21 @@ public class BruteForceSolver {
     }
 
     protected Garment[] generateOutfit() {
+        //System.out.println("Garment: "+wardrobe.getGarment(Constants.LEGS));
         return null;
-
-/*        Garment[] latest_attempt = new Garment[Constants.ATTR_ARRAY_SIZE];
-
-        boolean validoutfit = false;
+        //latest attempt should be an array of bodyparts (however many that is)
+/*        boolean validoutfit = false;
 
         int num_tries = 0;
         while(!validoutfit) {
             //generate a random outfit
-            
+                
             //see if it conflicts
             
             num_tries++;
         }
-        */
+        return null;
+ */       
     }
     
 }
