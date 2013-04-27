@@ -34,8 +34,10 @@ public class BruteForceSolver {
                 attempt[i] = wardrobe.getGarment(i);
             
             //return the first randomlyg generated valid outfit
-            if(Conflict.totalConflicts(attempt) <= this.confs_allowed)
+            if(Conflict.totalConflicts(attempt) <= this.confs_allowed) {
+                System.out.println("generated an outfit after: "+num_tries+" attempts");
                 return attempt;
+            }
             
             num_tries++;
         }
