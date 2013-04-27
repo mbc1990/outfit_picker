@@ -313,10 +313,15 @@ public class Wardrobe {
             if(each.attrs[Constants.BODY_PART] == bodypart)
                 bp.add(each);
         }
+
+        //return null if there are no clothes for this bodypart
+        if(bp.size() == 0) 
+            return null;
+
+        //otherwise randomly pick a piece of clothing for the bodypart
         Random rand = new Random();
         int r = rand.nextInt(bp.size());
         return bp.get(r);
-        
   //      return null;
     }
 }

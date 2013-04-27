@@ -38,9 +38,17 @@ public class Outfitter {
                         System.out.println("You have no matching outfits available! Try doing a load of laundry, or take a day off and go shopping!");
                     } else {
                         System.out.println("We have chosen the following outfit for you:");
-                        for(Garment g : outfit) {
-                            System.out.println(g.toString());
+                        //for every body part
+                        for(int i = 0; i < 10; i++) {
+                            if( outfit[i] == null) {
+                                System.out.println("nothing at all");
+                            } else {
+                                System.out.println(outfit[i].toString());
+                            }
                         }
+                       /* for(Garment g : outfit) {
+                            System.out.println(g.toString());
+                        } */
                     }
                    
                     

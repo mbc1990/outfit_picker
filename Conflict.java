@@ -72,7 +72,55 @@ public class Conflict {
     }
 
     //returns the total number of conflicts in the outfit
-    public int totalConflicts(Garment[] outfit) {
-        return 0;
+    public static int totalConflicts(Garment[] outfit) {
+        int total_confs = 0; 
+        //for each piece of clothing in the outfit
+        for(int i = 0; i < 10; i++) {
+            //for each other piece of clothing in the outfit
+            for(int j = 0; j < 10; j++) {
+                //don't compare a piece of clothing to itself
+                if(i != j) {
+                    //number of conflicts between the two garments
+                    total_confs += garmentConflicts(outfit[i],outfit[j]);
+                }
+            }
+        }
+        
+        //like below, each outfit is being compared twice, so we want half this number
+        return total_confs/2;
     }
+    
+    //returns the number of conflicts between two garments
+    public static int garmentConflicts(Garment g1, Garment g2) {
+        //if either garment is null, there are no conflicts
+        if(g1 == null || g2 == null)
+            return 0;
+
+        //but if both are there, see if they conflict
+        int[] att1 = g1.attrs;
+        int[] att2 = g2.attrs;
+        int num_conf = 0;
+        //for each attribute in clothing 1
+        for(int i = 0; i < Constants.ATTR_ARRAY_LEN; i++) {
+            //for each attribute in clothing 2
+            for(int j = 0; j < Constants.ATTR_ARRAY_LEN; j++) {
+                //if they both have these respective attributes
+                if(att1[i] == 1 && att2[j] == 1) {
+                    //if they in fact conflict
+                    /*
+                        little note here - we in fact only need HALF the conflict matrix. But making sure the attributes are correctly inserted is a pain, and so is inserting everything twice. So when the conflicts in the matrix are hard coded on (by Liz), we just code each conflict once, at either one of its two possible positions. Here both positions are checked for conflict, so it's okay that everything doesn't divide up perfectly on one side of the diagonal
+                    */
+                    if(conflict_matrix[i][j] == 1 || conflict_matrix[j][i] == 1) {
+                        //increment conflicts
+                        num_conf++;
+                    }
+                }
+            }
+        }
+        //because each attribute was checked against each other attribute, there are exactly num_conf/2 conflicts
+        return num_conf/2;
+    }
+
+
+
 }
