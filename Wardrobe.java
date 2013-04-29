@@ -91,68 +91,72 @@ public class Wardrobe {
                         }
                         break;
                     case Constants.COLOR_COLUMN:
-                        String[] colors = cur_attr.split("\n");
+                        String[] colors = cur_attr.split(" ");
                         for(int j = 0; j<colors.length; j++){
                             String color = colors[j];
+                            if(color.compareTo("navyblue") == 0 ){
+                                output_attrs[Constants.NAVY_BLUE] = 1;
+                                continue;
+                            }
                             if(color.compareTo("blue") == 0 ){
                                 output_attrs[Constants.BLUE] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("black") == 0){
                                 output_attrs[Constants.BLACK] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("brown") == 0){
                                 output_attrs[Constants.BROWN] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("red") == 0 ){
                                 output_attrs[Constants.RED] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("pink") == 0 ){
                                 output_attrs[Constants.PINK] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("orange") == 0) {
                                 output_attrs[Constants.ORANGE] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("yellow") == 0){ 
                                 output_attrs[Constants.YELLOW] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("white") == 0 ){
                                 output_attrs[Constants.WHITE] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("tan") == 0 ){
                                 output_attrs[Constants.TAN] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("cream") == 0) {
                                 output_attrs[Constants.CREAM] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("grey") == 0){ 
                                 output_attrs[Constants.GREY] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("purple") == 0){ 
                                 output_attrs[Constants.PURPLE] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("green") == 0){ 
                                 output_attrs[Constants.GREEN] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("gold") == 0){ 
                                 output_attrs[Constants.GOLD] = 1;
-                                break;
+                                continue;
                             }
                             else if(color.compareTo("silver") == 0){ 
                                 output_attrs[Constants.SILVER] = 1;
-                                break;
+                                continue;
                             }
                             else{
                                 System.err.println("Malformed wardrobe file at line "+line_number+
@@ -194,6 +198,9 @@ public class Wardrobe {
                             output_attrs[Constants.NYLON] = 1;
                             break;
                         }
+			else if(cur_attr.compareTo("") == 0){
+			    break;
+			}
                         else{
                             System.err.println("Malformed wardrobe file at line "+line_number+
                                     ", in the FABRIC column.");
@@ -209,10 +216,13 @@ public class Wardrobe {
                             output_attrs[Constants.CONTRASTING] = 1;
                             break;
                         }
-                        else if(cur_attr.compareTo("complementary") == 0 ){
+                        else if(cur_attr.compareTo("complimentary") == 0 ){
                             output_attrs[Constants.COMPLIMENTARY] = 1;
                             break;
                         }
+			else if(cur_attr.compareTo("") == 0){
+			    break;
+			}
                         else{
                             System.err.println("Malformed wardrobe file at line "+line_number+
                                     ", in the PATTERN column.");
@@ -244,6 +254,9 @@ public class Wardrobe {
                             output_attrs[Constants.FORMAL] = 1;
                             break;
                         }
+			else if(cur_attr.compareTo("") == 0){
+			    break;
+			}
                         else{
                             System.err.println("Malformed wardrobe file at line "+line_number+
                                     ", in the FORMALNESS column.");
@@ -267,6 +280,12 @@ public class Wardrobe {
                             output_attrs[Constants.VERY_SHORT] = 1;
                             break;
                         }
+                        else if(cur_attr.compareTo("n/a") == 0 ){
+                            break;
+                        }
+			else if(cur_attr.compareTo("") == 0){
+			    break;
+			}
                         else{
                             System.err.println("Malformed wardrobe file at line "+line_number+
                                     ", in the SKIN COVER column.");
@@ -290,6 +309,12 @@ public class Wardrobe {
                             output_attrs[Constants.VERY_LOOSE] = 1;
                             break;
                         }
+                        else if(cur_attr.compareTo("n/a") == 0 ){
+                            break;
+                        }
+			else if(cur_attr.compareTo("") == 0){
+			    break;
+			}
                         else{
                             System.err.println("Malformed wardrobe file at line "+line_number+
                                     ", in the VOLUME column.");

@@ -5,7 +5,7 @@ public class ConflictMatrix {
     //called once in main when program is run
     //assigns values that correspond to rules
     static void constructMatrix() {
-        matrix[Constants.BLUE][Constants.BLACK] = 1;
+        matrix[Constants.NAVY_BLUE][Constants.BLACK] = 1;
 	matrix[Constants.BLACK][Constants.BROWN] = 1;
 	matrix[Constants.YELLOW][Constants.BROWN] = 1;
 	matrix[Constants.PINK][Constants.PURPLE] = 1;

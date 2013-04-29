@@ -89,7 +89,7 @@ public class Constants {
     /******ARRAY INDICES*******/
     /**************************/
     /* COLORS */
-    public final static int LIGHT_BLUE = 1;
+    public final static int NAVY_BLUE = 1;
     public final static int BLUE = 2;
     public final static int BLACK = 3;
     public final static int BROWN = 4;
