@@ -48,12 +48,14 @@ public class AC3Solver {
                     int[] arc = new int[2];
                     arc[0] = i;
                     arc[1] = j;
+                    queue.add(arc);
                 }
             }
         }
 
         //AC-3
         while(queue.size() != 0) {
+//            System.out.println("Queue: "+queue.toString());
             //pop the front of the queue
             int[] front = queue.remove(0); 
             //get the domains for the arc and remove inconsistent values
@@ -72,7 +74,7 @@ public class AC3Solver {
         }
         System.out.println("-------------------------------");   
         for(int i = 0; i < 10; i++) {
-            System.out.println("items in domain: "+i);
+            System.out.println("items in domain "+i);
             ArrayList<Garment> darr = domains.get(i);
             for(Garment each : darr) {
                 System.out.println(each.toString());
@@ -97,7 +99,8 @@ public class AC3Solver {
     //returns true if it removed inconsistent values
     private boolean removedInconsistent(int[] arc, ArrayList<Garment> d_u, ArrayList<Garment> d_v) {
         boolean removed = false;
-        for(Garment each : d_u) {
+        ArrayList<Garment> ducopy = new ArrayList<Garment>(d_u);
+        for(Garment each : ducopy) {
             //gets set to true if at least 1 garment in domain D_v doesn't conflict
             boolean no_conflicts = false;
             for(Garment every : d_v) {
@@ -105,8 +108,13 @@ public class AC3Solver {
                     no_conflicts = true;
                 }
             }
-            if(no_conflicts == true) {
+            //if d_v is empty, also no conflicts
+            if(d_v.size() == 0)
+                no_conflicts = true;
+            if(no_conflicts == false) {
+               
                 d_u.remove(each);
+                System.out.println("removing "+each.toString());
                 removed = true;
             }
         }

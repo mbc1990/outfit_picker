@@ -103,9 +103,9 @@ public class Conflict {
                     num_total_conflicts++;
             }
         }
-        System.out.println("Conflict matrix has "+num_total_conflicts+" conflicts");
-        System.out.println("cm1: "+conflict_matrix[3][4]);
-        System.out.println("cm2: "+conflict_matrix[4][3]);
+//        System.out.println("Conflict matrix has "+num_total_conflicts+" conflicts");
+  //      System.out.println("cm1: "+conflict_matrix[3][4]);
+    //    System.out.println("cm2: "+conflict_matrix[4][3]);
 
         //but if both are there, see if they conflict
         int[] att1 = g1.attrs;
@@ -117,7 +117,7 @@ public class Conflict {
             for(int j = 0; j < Constants.ATTR_ARRAY_LEN; j++) {
                 //if they both have these respective attributes
                 if(att1[i] == 1 && att2[j] == 1) {
-                    System.out.println("garment 1 has attribute: "+i+" garment 2 has attribute: "+j);
+     //               System.out.println("garment 1 has attribute: "+i+" garment 2 has attribute: "+j);
                     //if they in fact conflict
                     /*
                         little note here - we in fact only need HALF the conflict matrix. But making sure the attributes are correctly inserted is a pain, and so is inserting everything twice. So when the conflicts in the matrix are hard coded on (by Liz), we just code each conflict once, at either one of its two possible positions. Here both positions are checked for conflict, so it's okay that everything doesn't divide up perfectly on one side of the diagonal
