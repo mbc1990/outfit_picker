@@ -72,6 +72,9 @@ public class AC3Solver {
                 }
             }
         }
+
+        //TODO: MAKE AN ASSIGNMENT FROM THE NARROWED DOWN DOMAINS
+
         System.out.println("-------------------------------");   
         for(int i = 0; i < 10; i++) {
             System.out.println("items in domain "+i);
