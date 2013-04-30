@@ -24,7 +24,7 @@ public class BruteForceSolver {
     //  latest attempt should be an array of bodyparts (however many that is)
         
         //assuming there are only 10 body parts (this should perhaps be in constants so we can add more body parts in the future)
-        Garment[] attempt = new Garment[10];
+        Garment[] attempt = new Garment[Constants.NUM_BODY_PARTS];
         int num_tries = 0;
         //will an outfit ever be found? Will this loop ever terminate? Who knows!
         while(true) {

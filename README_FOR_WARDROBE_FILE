@@ -10,6 +10,7 @@ Options for garments are:
  -shorts
  -skirt
  -shirt
+ -sweater
  -vest
  -scarf
  -jewelry
@@ -21,6 +22,7 @@ Options for garments are:
 Options for colors are:
  -navyblue (one word)
  -blue
+ -teal
  -black
  -brown
  -red
@@ -32,6 +34,7 @@ Options for colors are:
  -cream
  -grey
  -purple
+ -maroon
  -green
  -gold
  -silver

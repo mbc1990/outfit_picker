@@ -5,8 +5,41 @@ Long, soft black pants|pants|black|cotton|solid|snappy|long|loose
 Cute, black jean shorts|shorts|black|denim|solid|casual|short|tight
 Short blue jean shorts|shorts|blue|denim|solid|casual|very short|tight
 Pretty collared white shirt|shirt|white|cotton|solid|dressy|long|normal
-Cream sailor-esque sweater|shirt|cream|cotton|solid|snappy|medium|loose
+Cream sailor-esque sweater|sweater|cream|cotton|solid|snappy|medium|loose
 Orange flowy skirt, slightly above knee|skirt|orange|linen|solid|casual|short|very loose
 Black, thin, turtle neck with short sleeves|shirt|black|cotton|solid|snappy|short|tight
-Thin flat shoes with tan and blue stripes|shoes|blue tan|cotton|complimentary|casual|n/a|n/a
+Thin flat shoes with tan and blue stripes|shoes|blue tan|cotton|complimentary|casual|medium|n/a
+Blue and white shoes|shoes|blue white|denim|solid|casual|medium|n/a
 Thin black socks|socks|black|cotton|solid|casual|short|n/a
+Plaid red and black shirt|shirt|red black|cotton|contrasting|snappy|medium|loose
+Green sweater with buttons|sweater|green|cotton|solid|casual|long|loose
+Thin, orange and pink flowery tank top|shirt|green pink orange yellow|nylon|contrasting|casual|short|tight
+Navy blue LinkedIn sweatshirt|sweater|navyblue|cotton|solid|very casual|long|very loose
+Light grey skinny jeans|pants|grey|denim|solid|very casual|long|tight
+Plaid green and tan collared shirt|shirt|green tan|cotton|contrasting|snappy|long|normal
+Plaid red and tan collared shirt|shirt|red tan|cotton|contrasting|snappy|long|normal
+Blue and black plaid skirt|skirt|blue black|wool|contrasting|snappy|medium|loose
+Pink flowery t-shirt|shirt|pink yellow|cotton|complimentary|casual|short|normal
+Short black skirt|
+Striped purple shirt/sweater|
+Teal microsoft t-shirt|
+Shiny black and grey shirt with sequins|
+Red and white checkered shirt|
+Tant long sleeved shirt|
+Teal three quarter length shirt|
+Dark blue jeans|
+Teal flared pants|
+Hot pink shorts|
+Black dethklok shirt|
+Knit grey bear sweater|
+Multicolored knit sweater with flowers|
+Black and white moose sweater|
+Grey and black striped skirt|
+Red knit sweater
+Grey tank top
+Teal ong sleeved shirt
+Puple, blue nylon flowy shirt
+Stretchy black pants|
+Red cashmere sweater|
+Grey and white knitted sweater|
+Tan three quarter length sweater|

@@ -56,6 +56,10 @@ public class Wardrobe {
                             output_attrs[Constants.BODY_PART] = Constants.TORSO;
                             break;
                         }
+                        else if(cur_attr.compareTo("sweater") == 0){
+                            output_attrs[Constants.BODY_PART] = Constants.SWEATER;
+                            break;
+                        }
                         else if(cur_attr.compareTo("vest") == 0){
                             output_attrs[Constants.BODY_PART] = Constants.CHEST;
                             break;

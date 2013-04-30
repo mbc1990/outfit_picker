@@ -75,9 +75,9 @@ public class Conflict {
     public static int totalConflicts(Garment[] outfit) {
         int total_confs = 0; 
         //for each piece of clothing in the outfit
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
             //for each other piece of clothing in the outfit
-            for(int j = 0; j < 10; j++) {
+            for(int j = 0; j < Constants.NUM_BODY_PARTS; j++) {
                 //don't compare a piece of clothing to itself
                 if(i != j) {
                     //number of conflicts between the two garments
@@ -108,9 +108,18 @@ public class Conflict {
                 if(att1[i] == 1 && att2[j] == 1) {
                     //if they in fact conflict
                     /*
-                        little note here - we in fact only need HALF the conflict matrix. But making sure the attributes are correctly inserted is a pain, and so is inserting everything twice. So when the conflicts in the matrix are hard coded on (by Liz), we just code each conflict once, at either one of its two possible positions. Here both positions are checked for conflict, so it's okay that everything doesn't divide up perfectly on one side of the diagonal
+			little note here - we in fact only need HALF the
+			conflict matrix. But making sure the attributes are
+			correctly inserted is a pain, and so is inserting
+			everything twice. So when the conflicts in the matrix
+			are hard coded on (by Liz), we just code each conflict
+			once, at either one of its two possible positions. Here
+			both positions are checked for conflict, so it's okay
+			that everything doesn't divide up perfectly on one side
+			of the diagonal
                     */
                     if(conflict_matrix[i][j] == 1 || conflict_matrix[j][i] == 1) {
+			//System.out.println("Garment 1: "+g1.toString()+", Garment 2: "+g2.toString());
                         //increment conflicts
                         num_conf++;
                     }
