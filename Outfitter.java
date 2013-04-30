@@ -14,6 +14,9 @@ public class Outfitter {
         boolean done = false;
         Scanner s = new Scanner(System.in);
 
+        //construct the conflict matrix
+        ConflictMatrix.constructMatrix();
+
         //get input from user
         while(!done) {
             printOptions();
