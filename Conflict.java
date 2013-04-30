@@ -104,6 +104,8 @@ public class Conflict {
             }
         }
         System.out.println("Conflict matrix has "+num_total_conflicts+" conflicts");
+        System.out.println("cm1: "+conflict_matrix[3][4]);
+        System.out.println("cm2: "+conflict_matrix[4][3]);
 
         //but if both are there, see if they conflict
         int[] att1 = g1.attrs;
@@ -127,8 +129,7 @@ public class Conflict {
                 }
             }
         }
-        //because each attribute was checked against each other attribute, there are exactly num_conf/2 conflicts
-        return num_conf/2;
+        return num_conf;
     }
 
 
