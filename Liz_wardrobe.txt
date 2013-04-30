@@ -20,26 +20,111 @@ Plaid green and tan collared shirt|shirt|green tan|cotton|contrasting|snappy|lon
 Plaid red and tan collared shirt|shirt|red tan|cotton|contrasting|snappy|long|normal
 Blue and black plaid skirt|skirt|blue black|wool|contrasting|snappy|medium|loose
 Pink flowery t-shirt|shirt|pink yellow|cotton|complimentary|casual|short|normal
-Short black skirt|
-Striped purple shirt/sweater|
-Teal microsoft t-shirt|
-Shiny black and grey shirt with sequins|
-Red and white checkered shirt|
-Tant long sleeved shirt|
-Teal three quarter length shirt|
-Dark blue jeans|
-Teal flared pants|
-Hot pink shorts|
-Black dethklok shirt|
-Knit grey bear sweater|
-Multicolored knit sweater with flowers|
-Black and white moose sweater|
-Grey and black striped skirt|
-Red knit sweater
-Grey tank top
-Teal ong sleeved shirt
-Puple, blue nylon flowy shirt
-Stretchy black pants|
-Red cashmere sweater|
-Grey and white knitted sweater|
-Tan three quarter length sweater|
+Short black skirt|skirt|black|cotton|solid|snappy|short|normal
+Striped purple shirt/sweater|sweater|purple black|cotton|complimentary|casual|medium|loose
+Teal microsoft t-shirt|shirt|teal white|cotton|solid|very casual|short|tight
+Shiny black and grey shirt with sequins|shirt|black grey silver|cotton|complimentary|dressy|short|normal
+Red and white checkered shirt|shirt|white red|nylon|complimentary|casual|medium|tight
+Tan long sleeved shirt|shirt|tan|cotton|solid|snappy|long|normal
+Teal three quarter length shirt|shirt|teal|cotton|solid|casual|medium|tight
+Dark blue jeans|pants|blue|denim|solid|snappy|long|loose
+Teal flared pants|pants|teal|denim|solid|snappy|long|normal
+Hot pink shorts|shorts|pink|denim|solid|casual|very short|tight
+Black dethklok shirt|shirt|black red purple|cotton|solid|very casual|short|loose
+Knit grey bear sweater|sweater|grey black|wool|solid|snappy|long|loose
+Multicolored knit sweater with flowers|sweater|black red orange pink maroon|wool|contrasting|snappy|long|loose
+Black and white moose sweater|sweater|black white|wool|solid|casual|long|loose
+Grey and black striped skirt|skirt|black grey|cotton|complimentary|very casual|medium|very loose
+Red knit sweater|sweater|red|cotton|solid|casual|long|tight
+Grey tank top|shirt|grey|cotton|solid|very casual|short|tight
+Teal long sleeved shirt|shirt|teal|cotton|solid|casual|long|normal
+Purple, blue nylon flowy shirt|shirt|purple blue black|nylon|contrasting|snappy|medium|very loose
+Stretchy black pants|pants|black|cotton|solid|casual|long|tight
+Red cashmere sweater|shirt|red|wool|solid|dressy|long|loose
+Grey and white knitted sweater|sweater|grey white|wool|solid|snappy|long|normal
+Tan three quarter length sweater|sweater|tan|wool|solid|snappy|medium|normal
+Blue and white striped button up short sleeved shirt|shirt|blue white|linen|complimentary|casual|short|loose
+Jean jacket|sweater|blue|denim|solid|casual|long|normal
+Yellow t-shirt|shirt|yellow|cotton|solid|very casual|short|tight
+Yellow t-shirt with butterfly|shirt|yellow|cotton|complimentary|very casual|short|very tight
+Lacy black short sleeved shirt|shirt|black|cotton|solid|dressy|short|normal
+Flowery, pink green and white button up shirt|shirt|white green pink|cotton|contrasting|casual|long|tight
+Light maroon wool vest|vest|maroon|wool|solid|casual|short|loose
+Tan fancy vest|vest|tan|cotton|solid|dressy|short|normal
+Faded jeans with holes n' stuff|pants|blue|denim|solid|very casual|long|normal
+Red short sleeved turtle neck|shirt|red|cotton|solid|snappy|medium|very tight
+Black long sleeved shirt, dressy|shirt|black|nylon|solid|dressy|long|tight
+Black jean vest|vest|black|denim|solid|casual|short|normal
+Blue and green silk shirt|shirt|blue green|silk|contrasting|snappy|short|loose
+Black, blue, pink and red striped sweater|sweater|black blue pink red|wool|contrasting|casual|long|very tight
+Grey and white short sweater|sweater|grey white|wool|solid|snappy|long|tight
+Flowy green shirt|shirt|green|cotton|solid|snappy|long|very loose
+Crazy, red, green black and gold shirt|shirt|red green black gold|cotton|contrasting|snappy|long|loose
+Maroon shirt with ruffles|shirt|maroon|cotton|solid|snappy|long|tight
+Black wool short sleeves|shirt|black|wool|solid|casual|short|loose
+Silver tank top|shirt|silver|cotton|solid|dressy|short|very tight
+Silk grey green and pink tank top|shirt|grey green pink|silk|contrasting|dressy|short|loose
+Cream sweater|sweater|cream|wool|solid|snappy|long|very loose
+Blue, black and yellow sweater|sweater|blue black teal yellow|wool|contrasting|snappy|long|very loose
+Brown sweater|sweater|tan cream brown|wool|solid|casual|long|normal
+Maroon flowy shirt|shirt|maroon|cotton|solid|snappy|long|loose
+Dressy black shorts|shorts|black|cotton|solid|dressy|very short|tight
+Yellow teal orange wool shirt with rhinestones|shirt|yellow teal orange|wool|contrasting|snappy|short|very tight
+Long grey sweater|sweater|grey|cotton|solid|snappy|long|very loose
+maroon sweater turtleneck|sweater|maroon|wool|solid|snappy|long|tight
+White thick vest|vest|white teal|cotton|solid|casual|short|loose
+Black and pink airforce academy hoodie|sweater|black pink|cotton|solid|very casual|long|very loose
+Maroon oberlin hoodie|sweater|maroon|cotton|solid|very casual|long|loose
+Teal and blue sweater|sweater|teal blue|cotton|solid|casual|long|loose
+Teal black zebra cardigan|sweater|teal black|cotton|contrasting|casual|medium|very tight
+Red and orange circle sweater|sweater|red orange|cotton|contrasting|snappy|medium|tight
+Neon green and yellow sweater|sweater|green yellow|wool|solid|snappy|medium|tight
+Green, black and blue tank with flowers|shirt|green black blue|cotton|contrasting|very casual|very short|very tight
+Casual jean shorts|shorts|blue|denim|solid|very casual|short|tight
+Blue and white striped skirt|skirt|blue white|linen|complimentary|casual|short|loose
+Jean short shorts|shorts|blue|denim|solid|very casual|very short|normal
+Black tank top|shirt|black|cotton|solid|casual|very short|tight
+Grey lacy tank top|shirt|grey|cotton|complimentary|dressy|short|very tight
+Pink tank top|shirt|pink|cotton|solid|casual|short|normal
+Orange tank top|shirt|orange|cotton|solid|casual|short|tight
+Pink, grey and blue flowery vintage pattern shirt|shirt|pink grey blue|cotton|contrasting|snappy|short|tight
+Lacy tan tank|shirt|tan|cotton|complimentary|snappy|very short|tight
+Grey tank top|shirt|grey|cotton|solid|very casual|very short|tight
+Green tank top|shirt|green|cotton|solid|casual|very short|normal
+Red tank top|shirt|red|cotton|solid|casual|very short|normal
+Purpble tank top|shirt|purple|nylon|solid|casual|very short|tight
+Grey and black tank top|shirt|grey black|cotton|solid|snappy|very short|normal
+Hot pink wool skirt|skirt|pink|wool|solid|dressy|short|normal
+Thick wool cream sweater|sweater|cream|wool|solid|snappy|long|very loose
+White button up short sleeved jacket|shirt|white|linen|solid|casual|short|normal
+Yellow orange maroon paisley scarf|scarf|yellow orange maroon|cotton|contrasting|snappy|long|normal
+maroon and red scarf|scarf|maroon|wool|solid|snappy|long|normal
+Grey scarf|scarf|grey|cotton|solid|casual|long|normal
+Cream scarf|scarf|cream|cotton|solid|snappy|long|normal
+Pink, yellow and orange scarf|scarf|pink yellow orange|linen|complimentary|casual|medium|normal
+Gold, black and teal scarf|scarf|gold black teal|linen|contrasting|casual|medium|normal
+Cream hat|hat|cream|wool|solid|snappy|long|normal
+Cream gloves|gloves|cream|wool|solid|snappy|long|normal
+Brown gloves|gloves|brown|wool|solid|snappy|long|normal
+Grey gloves|gloves|grey|wool|solid|casual|long|normal
+Grey, maroon and black hat|hat|grey maroon black|wool|solid|casual|long|normal
+Pink long sleeved stretchy shirt|shirt|pink|nylon|solid|exercise|long|normal
+Black, spandex long pants|pants|black|nylon|solid|exercise|long|very tight
+Black carpis spandex pants|pants|black|nylon|solid|exercise|medium|very tight
+Black spandex shorts|pants|black|nylon|solid|exercise|long|very tight
+Pink and black running shorts|shorts|black pink|nylon|solid|exercise|very short|normal
+White running tank top|shirt|white|nylon|solid|exercise|short|normal
+Black spandex t-shirt|shirt|black|nylon|solid|exercise|short|very tight
+Pink running tank top|shirt|pink|nylon|solid|exercise|short|normal
+Grey and purple running shorts|shorts|grey purple|nylon|solid|exercise|short|normal
+Tight, spandex teal running tank top|shirt|teal|nylon|solid|exercise|very short|very tight
+Loose white running tank top|shirt|white|nylon|solid|exercise|short|loose
+Warm navy blue vest for running in cold weather|vest|navyblue|cotton|solid|exercise|short|loose
+Black, patent leather high heeled shoes|shoes|black|leather|solid|formal|medium|normal
+Green, purple, red running shoes|shoes|green purple red|cotton|solid|exercise|medium|normal
+Black leather knee high high heeled boots|shoes|black|leather|solid|dressy|long|normal
+Black leather mary jane shoes|shoes|black|leather|solid|snappy|medium|normal
+Tan and orange flip flops|shoes|tan orange|cotton|complimentary|very casual|very short|normal
+Red and white flip flops|shoes|red white|cotton|solid|very casual|very short|normal
+Pink leather shoes|shoes|pink|leather|solid|casual|medium|normal
+Red patent leather high heeled shoes|shoes|red|leather|solid|dressy|medium|normal

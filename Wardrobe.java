@@ -150,8 +150,16 @@ public class Wardrobe {
                                 output_attrs[Constants.PURPLE] = 1;
                                 continue;
                             }
+                            else if(color.compareTo("maroon") == 0){ 
+                                output_attrs[Constants.MAROON] = 1;
+                                continue;
+                            }
                             else if(color.compareTo("green") == 0){ 
                                 output_attrs[Constants.GREEN] = 1;
+                                continue;
+                            }
+                            else if(color.compareTo("teal") == 0){ 
+                                output_attrs[Constants.TEAL] = 1;
                                 continue;
                             }
                             else if(color.compareTo("gold") == 0){ 
@@ -297,8 +305,12 @@ public class Wardrobe {
                         }
                         break;
                     case Constants.VOLUME_COLUMN:
-                        if(cur_attr.compareTo("tight") == 0){ 
+                        if(cur_attr.compareTo("very tight") == 0){ 
                             output_attrs[Constants.TIGHT] = 1;
+                            break;
+                        }
+                        else if(cur_attr.compareTo("tight") == 0){ 
+                            output_attrs[Constants.NORMAL] = 1;
                             break;
                         }
                         else if(cur_attr.compareTo("normal") == 0){ 

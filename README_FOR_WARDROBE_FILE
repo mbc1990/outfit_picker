@@ -10,7 +10,7 @@ Options for garments are:
  -shorts
  -skirt
  -shirt
- -sweater
+ -sweater (this applied to jackets as well)
  -vest
  -scarf
  -jewelry
@@ -70,6 +70,7 @@ Options for skin cover are:
  -n/a
 
 Options for volume are:
+ -very tight
  -tight
  -normal
  -loose
