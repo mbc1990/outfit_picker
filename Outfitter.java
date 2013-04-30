@@ -14,6 +14,9 @@ public class Outfitter {
         boolean done = false;
         Scanner s = new Scanner(System.in);
 
+        //construct the conflict matrix
+        ConflictMatrix.constructMatrix();
+
         //get input from user
         while(!done) {
             printOptions();
@@ -66,6 +69,11 @@ public class Outfitter {
                     }
                     done = true;
                     */
+                case 2:
+                    System.out.println("Generating an outfit using AC-3");
+                    AC3Solver solver = new AC3Solver(w);
+                    Garment[] output = solver.generateOutfit();
+                    break;
                 default:
                     System.out.println(""+o+"is not a valid option! Please try again.");
             }

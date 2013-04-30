@@ -64,7 +64,7 @@ public class Conflict {
             for(int j = i; j < Constants.ATTR_ARRAY_LEN; j++) {
                 if(((a1[i] == 1 && a2[j] == 1) || (a1[j] ==1 && a2[i] ==1)) && conflict_matrix[i][j] == 1) {
                     num_conf++;
-                    System.out.println(i+" in ar1 conflicts with "+j+" in ar2");
+//                    System.out.println(i+" in ar1 conflicts with "+j+" in ar2");
                 }
             }
         }
@@ -96,6 +96,17 @@ public class Conflict {
         if(g1 == null || g2 == null)
             return 0;
 
+        int num_total_conflicts = 0;
+        for(int i = 0; i < Constants.ATTR_ARRAY_LEN; i++) {
+            for(int j = 0; j < Constants.ATTR_ARRAY_LEN; j++) {
+                if(i != j && conflict_matrix[i][j] == 1)
+                    num_total_conflicts++;
+            }
+        }
+//        System.out.println("Conflict matrix has "+num_total_conflicts+" conflicts");
+  //      System.out.println("cm1: "+conflict_matrix[3][4]);
+    //    System.out.println("cm2: "+conflict_matrix[4][3]);
+
         //but if both are there, see if they conflict
         int[] att1 = g1.attrs;
         int[] att2 = g2.attrs;
@@ -106,6 +117,7 @@ public class Conflict {
             for(int j = 0; j < Constants.ATTR_ARRAY_LEN; j++) {
                 //if they both have these respective attributes
                 if(att1[i] == 1 && att2[j] == 1) {
+     //               System.out.println("garment 1 has attribute: "+i+" garment 2 has attribute: "+j);
                     //if they in fact conflict
                     /*
 			little note here - we in fact only need HALF the
@@ -126,8 +138,7 @@ public class Conflict {
                 }
             }
         }
-        //because each attribute was checked against each other attribute, there are exactly num_conf/2 conflicts
-        return num_conf/2;
+        return num_conf;
     }
 
 
