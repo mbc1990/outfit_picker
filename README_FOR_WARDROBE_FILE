@@ -13,8 +13,6 @@ Options for garments are:
  -sweater (this applied to jackets as well)
  -vest
  -scarf
- -jewelry
- -socks
  -shoes
  -gloves
  -hat
@@ -66,7 +64,7 @@ Options for skin cover are:
  -long
  -medium
  -short
- -very short
+ -veryshort (one word)
  -n/a
 
 Options for volume are:

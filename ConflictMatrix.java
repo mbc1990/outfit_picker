@@ -17,15 +17,22 @@ public class ConflictMatrix {
 	matrix[Constants.LINEN][Constants.WOOL] = 1;
 	matrix[Constants.POLYESTER][Constants.WOOL] = 1;
 	matrix[Constants.LEATHER][Constants.POLYESTER] = 1;
+	matrix[Constants.EXERCISE][Constants.VERY_CASUAL] = 1;
 	matrix[Constants.EXERCISE][Constants.CASUAL] = 1;
 	matrix[Constants.EXERCISE][Constants.SNAPPY] = 1;
 	matrix[Constants.EXERCISE][Constants.DRESSY] = 1;
 	matrix[Constants.EXERCISE][Constants.FORMAL] = 1;
+	//matrix[Constants.CASUAL][Constants.EXERCISE] = 1;
+	//matrix[Constants.SNAPPY][Constants.EXERCISE] = 1;
+	//matrix[Constants.DRESSY][Constants.EXERCISE] = 1;
+	//matrix[Constants.FORMAL][Constants.EXERCISE] = 1;
 	matrix[Constants.VERY_CASUAL][Constants.FORMAL] = 1;
 	matrix[Constants.CASUAL][Constants.FORMAL] = 1;
 	matrix[Constants.SNAPPY][Constants.FORMAL] = 1;
 	matrix[Constants.VERY_CASUAL][Constants.DRESSY] = 1;
 	matrix[Constants.VERY_SHORT][Constants.LONG] = 1;
+	matrix[Constants.SHORT][Constants.LONG] = 1;
+	matrix[Constants.LONG][Constants.SHORT] = 1;
     }
 
 }

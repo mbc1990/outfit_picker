@@ -6,7 +6,7 @@ public class Garment {
 
 
     //list of attributes that define the garment
-    int[] attrs = new int[Constants.ATTR_ARRAY_LEN];
+    public int[] attrs = new int[Constants.ATTR_ARRAY_LEN];
 
     public Garment(String name, int[] attrs) {
         this.name = name;

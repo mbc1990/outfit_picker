@@ -63,7 +63,6 @@ public class Constants {
     //hands
     //neck
     //head
-    //jewelery
 
     //number of attributes--so that we know how long to make our attribute arrays
     public final static int NUM_ATTRS = 46;
@@ -72,26 +71,27 @@ public class Constants {
     //index in array indicating the domain of the garment
     public final static int BODY_PART = 0;
 
-    public final static int NUM_BODY_PARTS = 11;
+    public final static int NUM_BODY_PARTS = 8;
 
     //possible values for the BODY_PART index
     //	these values are not related to the attribute values
     public final static int LEGS = 0;
     public final static int FEET = 1;
-    public final static int SHOES = 2; //so that you can wear socks AND shoes
-    public final static int TORSO = 3;
-    public final static int SWEATER = 4;
-    public final static int CHEST = 5; //for vests
-    public final static int WAIST = 6;
-    public final static int HANDS = 7;
-    public final static int NECK = 8;
-    public final static int HEAD = 9;
-    public final static int JEWELRY = 10;
+    public final static int TORSO = 2;
+    public final static int SWEATER = 3;
+    public final static int VEST = 4; //for vests
+    public final static int HANDS = 5;
+    public final static int NECK = 6;
+    public final static int HEAD = 7;
 
     /**************************/
     /******ARRAY INDICES*******/
     /**************************/
     /* COLORS */
+    public final static int NUM_COLORS = 18;
+    public final static int FIRST_COLOR = 1;
+    public final static int LAST_COLOR = 18;
+
     public final static int NAVY_BLUE = 1;
     public final static int BLUE = 2;
     public final static int TEAL = 3;

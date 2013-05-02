@@ -20,7 +20,7 @@ public class AC3Solver {
         ArrayList<ArrayList<Garment>> domains = new ArrayList<ArrayList<Garment>>();
 
         //initialize domain arrays
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < Constants.NUM_BODY_PARTS; i++)
             domains.add(new ArrayList<Garment>());
 
         //fill them with COPIES of the garments from the wardrobe
@@ -42,8 +42,8 @@ public class AC3Solver {
         //initialize queue (add all arcs to the queue)
         //everything's connected!
         ArrayList<int[]> queue = new ArrayList<int[]>(); 
-        for(int i = 0; i < 10; i++) {
-            for(int j = 0; j < 10; j++) {
+        for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
+            for(int j = 0; j < Constants.NUM_BODY_PARTS; j++) {
                 if(i != j) {
                     int[] arc = new int[2];
                     arc[0] = i;
@@ -61,7 +61,7 @@ public class AC3Solver {
             //get the domains for the arc and remove inconsistent values
             if(removedInconsistent(front,domains.get(front[0]),domains.get(front[1]))) {
                 //inconsistent values were removed, so we need to put things back in the queue
-                for(int i = 0; i < 10; i++) {
+                for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
                     int[] qmember = new int[2];
                     qmember[0] = i;
                     qmember[1] = front[0];

@@ -61,19 +61,11 @@ public class Wardrobe {
                             break;
                         }
                         else if(cur_attr.compareTo("vest") == 0){
-                            output_attrs[Constants.BODY_PART] = Constants.CHEST;
+                            output_attrs[Constants.BODY_PART] = Constants.VEST;
                             break;
                         }
                         else if(cur_attr.compareTo("scarf") == 0 ){
                             output_attrs[Constants.BODY_PART] = Constants.NECK;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("jewelry") == 0 ){
-                            output_attrs[Constants.BODY_PART] = Constants.JEWELRY;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("socks") == 0) {
-                            output_attrs[Constants.BODY_PART] = Constants.FEET;
                             break;
                         }
                         else if(cur_attr.compareTo("shoes") == 0) {
@@ -276,33 +268,38 @@ public class Wardrobe {
                         }
                         break;
                     case Constants.SKIN_COVER_COLUMN:
-                        if(cur_attr.compareTo("long") == 0){ 
-                            output_attrs[Constants.LONG] = 1;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("medium") == 0){ 
-                            output_attrs[Constants.MEDIUM] = 1;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("short") == 0 ){
-                            output_attrs[Constants.SHORT] = 1;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("very short") == 0 ){
-                            output_attrs[Constants.VERY_SHORT] = 1;
-                            break;
-                        }
-                        else if(cur_attr.compareTo("n/a") == 0 ){
-                            break;
-                        }
-			else if(cur_attr.compareTo("") == 0){
-			    break;
+                        String[] skin_cover_arr = cur_attr.split(" ");
+			for(int j = 0; j<skin_cover_arr.length; j++){
+                            String skin_cover = skin_cover_arr[j];
+			    if(skin_cover.compareTo("long") == 0){ 
+				output_attrs[Constants.LONG] = 1;
+				continue;
+			    }
+			    else if(skin_cover.compareTo("medium") == 0){ 
+				output_attrs[Constants.MEDIUM] = 1;
+				continue;
+			    }
+			    else if(skin_cover.compareTo("short") == 0 ){
+				output_attrs[Constants.SHORT] = 1;
+				continue;
+			    }
+			    else if(skin_cover.compareTo("veryshort") == 0 ){
+				output_attrs[Constants.VERY_SHORT] = 1;
+				continue;
+			    }
+			    else if(skin_cover.compareTo("n/a") == 0 ){
+				output_attrs[Constants.VERY_SHORT] = 1;
+				output_attrs[Constants.SHORT] = 1;
+				output_attrs[Constants.MEDIUM] = 1;
+				output_attrs[Constants.LONG] = 1;
+				continue;
+			    }
+			    else{
+				System.err.println("Malformed wardrobe file at line "+line_number+
+					", in the SKIN COVER column.");
+				System.exit(1);
+			    }
 			}
-                        else{
-                            System.err.println("Malformed wardrobe file at line "+line_number+
-                                    ", in the SKIN COVER column.");
-                            System.exit(1);
-                        }
                         break;
                     case Constants.VOLUME_COLUMN:
                         if(cur_attr.compareTo("very tight") == 0){ 
@@ -364,5 +361,20 @@ public class Wardrobe {
         int r = rand.nextInt(bp.size());
         return bp.get(r);
   //      return null;
+    }
+
+    public static boolean isWeatherAppropriate(Garment g, int temperature){
+	if(temperature <= 30){
+	    return g.attrs[Constants.LONG] == 1;
+	}
+	else if(temperature >30 && temperature <= 55){
+	    return g.attrs[Constants.MEDIUM] == 1;
+	}
+	else if(temperature >55 && temperature <= 80){
+	    return g.attrs[Constants.SHORT] == 1;
+	}
+	else{ //temperature >80
+	    return g.attrs[Constants.VERY_SHORT] == 1;
+	}
     }
 }

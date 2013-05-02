@@ -6,10 +6,15 @@ public class Outfitter {
 
     public static void main(String[] args) {
         //load input wardrobe file
-        if(args.length < 1) {
-            System.out.println("Usage: >java Outfitter wardrobe");
+        if(args.length < 2) {
+            System.out.println("Usage: >java Outfitter wardrobe temperature (in degrees)");
             System.exit(1);
         }
+	int temperature = Integer.parseInt(args[1]);
+	if(temperature > 100 || temperature < 0){
+	    System.out.println("Please enter a temperature between 0 and 100 degrees");
+	    System.exit(1);
+	}
         Wardrobe w = new Wardrobe(args[0]);
         boolean done = false;
         Scanner s = new Scanner(System.in);
@@ -36,15 +41,15 @@ public class Outfitter {
 
                     //run the bruteforce method
                     BruteForceSolver bf = new BruteForceSolver(w);
-                    Garment[] outfit = bf.generateOutfit();
+                    Garment[] outfit = bf.generateOutfit(temperature);
                     if (outfit == null) {
                         System.out.println("You have no matching outfits available! Try doing a load of laundry, or take a day off and go shopping!");
                     } else {
                         System.out.println("We have chosen the following outfit for you:");
                         //for every body part
-                        for(int i = 0; i < 10; i++) {
+                        for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
                             if( outfit[i] == null) {
-                                System.out.println("nothing at all");
+                                //System.out.println("nothing at all");
                             } else {
                                 System.out.println(outfit[i].toString());
                             }
@@ -76,7 +81,7 @@ public class Outfitter {
        
 		    System.out.println("We have chosen the following outfit for you:");
 		    //for every body part
-		    for(int i = 0; i < 10; i++) {
+		    for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
 			if( outfit[i] == null) {
 			    System.out.println("nothing at all");
 			} else {

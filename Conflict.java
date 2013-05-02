@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Conflict {
 
     private static int[][] conflict_matrix = ConflictMatrix.matrix;
@@ -141,6 +141,39 @@ public class Conflict {
         return num_conf;
     }
 
+    //returns number of conflicts in all garments
+    public static int garmentConflicts(ArrayList<Garment> garments){
+	//eval binary conflicts
+	////////////////////
+	int num_confs = 0;
+	for(int i = 0; i<garments.size(); i++){
+	    for(int j = i+1; j<garments.size(); j++){
+		num_confs += garmentConflicts(garments.get(i), garments.get(j));
+	    }
+	}
 
+	//non binary conflicts here
+	///////////////////
+	
+	//if number of colors is greater than 4
+	int uniqColors[] = new int[Constants.FIRST_COLOR+Constants.NUM_COLORS];
+	for(int i = Constants.FIRST_COLOR; i<=Constants.LAST_COLOR; i++)
+	    uniqColors[i] = 0;
 
+	for(Garment g : garments){
+	    for(int i = Constants.FIRST_COLOR; i<=Constants.LAST_COLOR; i++)
+		uniqColors[i] += g.attrs[i];
+	}
+
+	int numColors = 0;
+	for(int i = Constants.FIRST_COLOR; i<=Constants.LAST_COLOR; i++){
+	    if(uniqColors[i] > 0)
+		numColors++;
+	}
+	if(numColors > 4){
+	    num_confs++;
+	}
+
+	return num_confs;
+    }
 }

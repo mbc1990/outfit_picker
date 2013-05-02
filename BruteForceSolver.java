@@ -4,6 +4,8 @@
     who knows
 */
 
+import java.util.*;
+
 public class BruteForceSolver {
     
     private Wardrobe wardrobe;
@@ -19,21 +21,59 @@ public class BruteForceSolver {
         this.confs_allowed = confs_allowed;
     }
 
-    protected Garment[] generateOutfit() {
-        //System.out.println("Garment: "+wardrobe.getGarment(Constants.LEGS));
+    protected Garment[] generateOutfit(int temperature) {
     //  latest attempt should be an array of bodyparts (however many that is)
         
+    //if the temperature is less than sixty, we'll incorporate a vest into the outfit with some probability
+	boolean outfitHasVest = false;
+	if(temperature < 55){
+	    Random rand = new Random();
+	    int r = rand.nextInt();
+	    if(r < .33){
+		outfitHasVest = true;
+	    }
+	}
+
+	//if the temperature is cold, then we should have a sweater and gloves and hat and such
+	boolean outfitIsKindaWarm = temperature <= 65 ;
+	boolean outfitIsReallyWarm = temperature <= 30 ;
+
         //assuming there are only 10 body parts (this should perhaps be in constants so we can add more body parts in the future)
         Garment[] attempt = new Garment[Constants.NUM_BODY_PARTS];
         int num_tries = 0;
         //will an outfit ever be found? Will this loop ever terminate? Who knows!
         while(true) {
+	    if(num_tries % 50 == 0)
+		System.out.println("Searching for an outfit...");
+
             //generate a random outfit
-            //bodypart constants happen to be 0...9
-            for(int i = 0; i < 10; i++)
-                attempt[i] = wardrobe.getGarment(i);
+            for(int i = 0; i < Constants.NUM_BODY_PARTS; i++){
+		//if we're picking a vest but we're not supposed to have a vest
+		if(i == Constants.VEST && !outfitHasVest){
+		    attempt[i] = null;		    
+		    continue;
+		}
+		if((i == Constants.SWEATER && !outfitIsKindaWarm) || (i == Constants.SWEATER && outfitHasVest)){ //don't want to have a sweater AND a vest
+		    attempt[i] = null;		    
+		    continue;
+		}
+		if((i == Constants.HANDS || i == Constants.HEAD || i == Constants.NECK) && !outfitIsReallyWarm){
+		    attempt[i] = null;
+		    continue;
+		}
+
+		Garment g = wardrobe.getGarment(i);
+		int attempts_to_find_garment = 0;
+		while(!Wardrobe.isWeatherAppropriate(g, temperature) && attempts_to_find_garment < 50){
+	//	    if(attempts_to_find_garment % 10 == 0)
+	//		System.out.println("Searching for a weather appropriate garment...");
+		    g = wardrobe.getGarment(i);
+		    attempts_to_find_garment++;
+		}
+		attempt[i] = g;
+	    }
             
-            //return the first randomlyg generated valid outfit
+            //return the first randomly generated valid outfit
             if(Conflict.totalConflicts(attempt) <= this.confs_allowed) {
                 System.out.println("generated an outfit after: "+num_tries+" attempts");
                 return attempt;
