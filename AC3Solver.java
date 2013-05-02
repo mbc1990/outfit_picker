@@ -73,17 +73,6 @@ public class AC3Solver {
             }
         }
 
-        //TODO: MAKE AN ASSIGNMENT FROM THE NARROWED DOWN DOMAINS
-
-        System.out.println("-------------------------------");   
-        for(int i = 0; i < 10; i++) {
-            System.out.println("items in domain "+i);
-            ArrayList<Garment> darr = domains.get(i);
-            for(Garment each : darr) {
-                System.out.println(each.toString());
-            }
-        }
-
 
         //list of values x_u for each domain (body part) D_u
         
@@ -96,7 +85,33 @@ public class AC3Solver {
                     //if (w,u) is not already in the queue (it might have been removed)
                         //add it to the end of the queue
 
-        return null;
+	/*
+        System.out.println("-------------------------------");   
+        for(int i = 0; i < 10; i++) {
+            System.out.println("items in domain "+i);
+            ArrayList<Garment> darr = domains.get(i);
+            for(Garment each : darr) {
+                System.out.println(each.toString());
+            }
+        }
+	*/
+
+        //MAKE AN ASSIGNMENT FROM THE NARROWED DOWN DOMAINS    
+	Garment[] generatedOutfit = new Garment[domains.size()];
+	Random r = new Random();
+	for(int i=0; i<generatedOutfit.length; i++) {
+	    ArrayList<Garment> darr = domains.get(i);
+	    if (darr.size() != 0) { //i.e. if there is a valid assignment for this domain
+		generatedOutfit[i] = darr.get(r.nextInt(darr.size())); //pick a random garment
+		
+		// ALTERNATIVELY we might have to figure out another algorithm here to check for
+		// multi-garment restrictions (i.e. we can choose 2 blue things but not 3)
+	    }
+	    
+	}
+
+
+        return generatedOutfit;
     }
     
     //returns true if it removed inconsistent values

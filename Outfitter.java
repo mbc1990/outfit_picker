@@ -72,10 +72,22 @@ public class Outfitter {
                 case 2:
                     System.out.println("Generating an outfit using AC-3");
                     AC3Solver solver = new AC3Solver(w);
-                    Garment[] output = solver.generateOutfit();
+                    outfit = solver.generateOutfit();
+       
+		    System.out.println("We have chosen the following outfit for you:");
+		    //for every body part
+		    for(int i = 0; i < 10; i++) {
+			if( outfit[i] == null) {
+			    System.out.println("nothing at all");
+			} else {
+			    System.out.println(outfit[i].toString());
+			}
+		    }
+       
+
                     break;
                 default:
-                    System.out.println(""+o+"is not a valid option! Please try again.");
+                    System.out.println(""+o+" is not a valid option! Please try again.");
             }
         }
 
@@ -83,7 +95,7 @@ public class Outfitter {
     }
 
     public static void printOptions() {
-        System.out.println("0 - exit \n 1 - Generate an outfit via brute force.");
+        System.out.println("0 - Exit. \n1 - Generate an outfit via brute force. \n2 - Generate an outfit via AC-3.");
         System.out.print("Please enter a number: ");
     }
 
