@@ -14,10 +14,10 @@ public class AC3Solver {
     
     
 
-    public Garment[] generateOutfit() {
+    public Garment[] generateOutfit(int temperature) {
         //This is the list of domains and their members
         //so domains.get(Constants.LEGS) is a list of all garments that haven't been removed yet that go on the legs
-        ArrayList<ArrayList<Garment>> domains = new ArrayList<ArrayList<Garment>>();
+        ArrayList<ArrayList<Garment>> domains = new ArrayList<ArrayList<Garment>>();       
 
         //initialize domain arrays
         for(int i = 0; i < Constants.NUM_BODY_PARTS; i++)
@@ -29,16 +29,9 @@ public class AC3Solver {
             //add garment clone to proper domain arraylist
             domains.get(clone.attrs[Constants.BODY_PART]).add(clone); 
         }
+
+	//TODO: put <empty> garments in appropriate domains based on temperature
         
-        //testing - success
-/*        for(int i = 0; i < 10; i++) {
-            System.out.println("items in domain: "+i);
-            ArrayList<Garment> darr = domains.get(i);
-            for(Garment each : darr) {
-                System.out.println(each.toString());
-            }
-        }
-*/
         //initialize queue (add all arcs to the queue)
         //everything's connected!
         ArrayList<int[]> queue = new ArrayList<int[]>(); 
@@ -55,7 +48,6 @@ public class AC3Solver {
 
         //AC-3
         while(queue.size() != 0) {
-//            System.out.println("Queue: "+queue.toString());
             //pop the front of the queue
             int[] front = queue.remove(0); 
             //get the domains for the arc and remove inconsistent values
@@ -73,6 +65,11 @@ public class AC3Solver {
             }
         }
 
+	for(ArrayList<Garment> each : domains) {
+	    if(each.size() == 0) { //no valid assignment!!
+		return null;
+	    }
+	}
 
         //list of values x_u for each domain (body part) D_u
         
@@ -85,33 +82,31 @@ public class AC3Solver {
                     //if (w,u) is not already in the queue (it might have been removed)
                         //add it to the end of the queue
 
-	/*
-        System.out.println("-------------------------------");   
-        for(int i = 0; i < 10; i++) {
-            System.out.println("items in domain "+i);
-            ArrayList<Garment> darr = domains.get(i);
-            for(Garment each : darr) {
-                System.out.println(each.toString());
-            }
-        }
-	*/
-
         //MAKE AN ASSIGNMENT FROM THE NARROWED DOWN DOMAINS    
 	Garment[] generatedOutfit = new Garment[domains.size()];
-	Random r = new Random();
-	for(int i=0; i<generatedOutfit.length; i++) {
-	    ArrayList<Garment> darr = domains.get(i);
-	    if (darr.size() != 0) { //i.e. if there is a valid assignment for this domain
-		generatedOutfit[i] = darr.get(r.nextInt(darr.size())); //pick a random garment
-		
-		// ALTERNATIVELY we might have to figure out another algorithm here to check for
-		// multi-garment restrictions (i.e. we can choose 2 blue things but not 3)
-	    }
-	    
+	if(!recOutfit(generatedOutfit, domains, 0)) {
+	    generatedOutfit=null;
 	}
 
-
         return generatedOutfit;
+    }
+
+    private boolean recOutfit(Garment[] generatedOutfit, ArrayList<ArrayList<Garment>> domains, int i) {
+	if(i == domains.size()) { //we're done here
+	    return true;
+	}
+	Random r = new Random();
+	boolean done = false;
+	while(!done) {
+	    if(domains.get(i).size() == 0) { //no valid assignment!!
+		return false;
+	    }
+	    generatedOutfit[i] = domains.get(i).remove(r.nextInt(domains.get(i).size()));
+	    if(Conflict.totalConflicts(generatedOutfit) == 0) {
+		done = recOutfit(generatedOutfit, domains, i+1);
+	    }
+	}
+	return true;
     }
     
     //returns true if it removed inconsistent values

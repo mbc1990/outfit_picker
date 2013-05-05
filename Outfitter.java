@@ -78,7 +78,7 @@ public class Outfitter {
                 case 2:
                     System.out.println("Generating an outfit using AC-3");
                     AC3Solver solver = new AC3Solver(w);
-                    outfit = solver.generateOutfit();
+                    outfit = solver.generateOutfit(temperature);
                     System.out.println("\n-----------------------------------------------------\n");
                     System.out.println("We have chosen the following outfit for you:");
                     //for every body part
@@ -89,6 +89,7 @@ public class Outfitter {
                             System.out.println(outfit[i].toString());
                         }
                     }
+		    System.out.println(""+Conflict.totalConflicts(outfit)+" conflicts.");
 
 
                     break;
