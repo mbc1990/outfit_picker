@@ -59,7 +59,7 @@ public class Outfitter {
                            System.out.println(g.toString());
                            } */
                     }
-
+		    System.out.println();
 
 
                     break;
@@ -79,17 +79,21 @@ public class Outfitter {
                     System.out.println("Generating an outfit using AC-3");
                     AC3Solver solver = new AC3Solver(w);
                     outfit = solver.generateOutfit(temperature);
-                    System.out.println("\n-----------------------------------------------------\n");
-                    System.out.println("We have chosen the following outfit for you:");
-                    //for every body part
-                    for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
-                        if( outfit[i] == null) {
-                            System.out.println("nothing at all");
-                        } else {
-                            System.out.println(outfit[i].toString());
-                        }
+		    if (outfit == null) {
+                        System.out.println("You have no matching outfits available! Try doing a load of laundry, or take a day off and go shopping!");
+                    } else {
+			System.out.println("\n-----------------------------------------------------\n");
+			System.out.println("We have chosen the following outfit for you:");
+			//for every body part
+			for(int i = 0; i < Constants.NUM_BODY_PARTS; i++) {
+			    if( outfit[i] == null) {
+				//                            System.out.println("nothing at all");
+			    } else {
+				System.out.println(outfit[i].toString());
+			    }
+			}
                     }
-		    System.out.println(""+Conflict.totalConflicts(outfit)+" conflicts.");
+		    System.out.println();
 
 
                     break;

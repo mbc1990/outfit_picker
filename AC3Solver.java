@@ -7,6 +7,8 @@ import java.util.*;
 public class AC3Solver {
     
     private Wardrobe wardrobe;
+    private int temperature;
+    private boolean vest;
 
     public AC3Solver( Wardrobe w ) {
         wardrobe = w;
@@ -17,7 +19,10 @@ public class AC3Solver {
     public Garment[] generateOutfit(int temperature) {
         //This is the list of domains and their members
         //so domains.get(Constants.LEGS) is a list of all garments that haven't been removed yet that go on the legs
-        ArrayList<ArrayList<Garment>> domains = new ArrayList<ArrayList<Garment>>();       
+        ArrayList<ArrayList<Garment>> domains = new ArrayList<ArrayList<Garment>>();
+
+	//initialize temperature
+	this.temperature = temperature;
 
         //initialize domain arrays
         for(int i = 0; i < Constants.NUM_BODY_PARTS; i++)
@@ -25,7 +30,7 @@ public class AC3Solver {
 
         //fill them with COPIES of the garments from the wardrobe
         for(Garment each : wardrobe.garments) {
-            Garment clone = new Garment(each.name, each.attrs);
+	    Garment clone = new Garment(each.name, each.attrs);
             //add garment clone to proper domain arraylist
             domains.get(clone.attrs[Constants.BODY_PART]).add(clone); 
         }
@@ -34,17 +39,23 @@ public class AC3Solver {
 	/////Empty garments are created with an empty constructor and can be
 	//identified by checking garment.IsEmpty which is a public field.
 	Garment emptyGarment = new Garment();
-	if(temperature > 65){
+	if(temperature < 65){
 	    //must have a sweater or vest if it's cold enough
 	    Random rand = new Random();
-	    int r = rand.nextInt();
-	    if(r < .33){
+	    int r = rand.nextInt(100);
+	    if(r < 33){
 		domains.get(Constants.VEST).add(emptyGarment);
+		vest=false;
 	    }
 	    else{
 		domains.get(Constants.SWEATER).add(emptyGarment);
+		vest=true;
 	    }
+	} else {
+	    domains.get(Constants.VEST).add(emptyGarment);
+	    domains.get(Constants.SWEATER).add(emptyGarment);
 	}
+
 	if(temperature > 30){
 	    //it's really cold, must have hat, gloves and scarf
 		domains.get(Constants.HEAD).add(emptyGarment);
@@ -67,6 +78,17 @@ public class AC3Solver {
         }
 
         //AC-3
+        //list of values x_u for each domain (body part) D_u
+        
+        //queue of (bodypart,bodypart) arcs (starts with an ordered pair for each body part for each other body part)
+
+        //while the queue is not empty
+            //(u,v) front = queue.remove(0) (arraylist as queue)
+            //if removedInconsistent(front, D_u, D_v)
+                //for each body part that's not u
+                    //if (w,u) is not already in the queue (it might have been removed)
+                        //add it to the end of the queue
+
         while(queue.size() != 0) {
             //pop the front of the queue
             int[] front = queue.remove(0); 
@@ -91,42 +113,47 @@ public class AC3Solver {
 	    }
 	}
 
-        //list of values x_u for each domain (body part) D_u
-        
-        //queue of (bodypart,bodypart) arcs (starts with an ordered pair for each body part for each other body part)
-
-        //while the queue is not empty
-            //(u,v) front = queue.remove(0) (arraylist as queue)
-            //if removedInconsistent(front, D_u, D_v)
-                //for each body part that's not u
-                    //if (w,u) is not already in the queue (it might have been removed)
-                        //add it to the end of the queue
-
         //MAKE AN ASSIGNMENT FROM THE NARROWED DOWN DOMAINS    
 	Garment[] generatedOutfit = new Garment[domains.size()];
-	if(!recOutfit(generatedOutfit, domains, 0)) {
-	    generatedOutfit=null;
+	int tolerance = 0;
+	while(!recOutfit(generatedOutfit, domains, 0, tolerance)) {
+	    tolerance++; //if at first you don't succeed, lower your expectations
 	}
 
         return generatedOutfit;
     }
 
-    private boolean recOutfit(Garment[] generatedOutfit, ArrayList<ArrayList<Garment>> domains, int i) {
+    //Uses recursive backtracking to generate an outfit with the fewest number of conflicts possible. Non-weather appropriate
+    //clothing counts as a conflict here. If temp < 30, gloves, hat, and scarf will be assigned if possible. If temp < 65, either
+    //a sweater or vest will be assigned. Returns true if an outfit with tolerance or fewer conflicts is possible, false otherwise.
+    private boolean recOutfit(Garment[] generatedOutfit, ArrayList<ArrayList<Garment>> domains, int i, int tolerance) {
+	Random r = new Random();
+	if(temperature > 30) {
+	    while(i == Constants.NECK || i == Constants.HEAD || i == Constants.HANDS
+		  || (i == Constants.VEST && (!vest || temperature > 65)) || (i == Constants.SWEATER && (vest || temperature > 65))){
+		generatedOutfit[i] = null;
+		i++;
+	    }
+	}
+	
+
 	if(i == domains.size()) { //we're done here
 	    return true;
 	}
-	Random r = new Random();
+
 	boolean done = false;
+	ArrayList<Garment> options = new ArrayList<Garment>(domains.get(i));
 	while(!done) {
-	    if(domains.get(i).size() == 0) { //no valid assignment!!
+	    if(options.size() == 0) { //no valid assignment!!
 		return false;
 	    }
-	    generatedOutfit[i] = domains.get(i).remove(r.nextInt(domains.get(i).size()));
-	    if(Conflict.totalConflicts(generatedOutfit) == 0) {
-		done = recOutfit(generatedOutfit, domains, i+1);
+	    generatedOutfit[i] = options.remove(r.nextInt(options.size()));
+	    int appropriate = Wardrobe.isWeatherAppropriate(generatedOutfit[i], temperature) ? 0 : -1;
+	    if(Conflict.totalConflicts(generatedOutfit) <= tolerance+appropriate) {
+		done = recOutfit(generatedOutfit, domains, i+1, tolerance+appropriate);
 	    }
 	}
-	return true;
+	return true; //If we got here, done must have been set to true, meaning we're done!
     }
     
     //returns true if it removed inconsistent values

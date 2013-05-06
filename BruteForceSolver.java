@@ -32,8 +32,8 @@ public class BruteForceSolver {
 	boolean outfitHasVest = false;
 	if(outfitIsKindaWarm){
 	    Random rand = new Random();
-	    int r = rand.nextInt();
-	    if(r < .33){
+	    int r = rand.nextInt(100);
+	    if(r < 33){
 		outfitHasVest = true;
 	    }
 	}
