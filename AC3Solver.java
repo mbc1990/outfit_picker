@@ -43,7 +43,7 @@ public class AC3Solver {
 	    //must have a sweater or vest if it's cold enough
 	    Random rand = new Random();
 	    int r = rand.nextInt(100);
-	    if(r < 33){
+	    if(r > 33){
 		domains.get(Constants.VEST).add(emptyGarment);
 		vest=false;
 	    }
@@ -54,6 +54,7 @@ public class AC3Solver {
 	} else {
 	    domains.get(Constants.VEST).add(emptyGarment);
 	    domains.get(Constants.SWEATER).add(emptyGarment);
+	    vest=false;
 	}
 
 	if(temperature > 30){
@@ -123,9 +124,12 @@ public class AC3Solver {
         return generatedOutfit;
     }
 
-    //Uses recursive backtracking to generate an outfit with the fewest number of conflicts possible. Non-weather appropriate
-    //clothing counts as a conflict here. If temp < 30, gloves, hat, and scarf will be assigned if possible. If temp < 65, either
-    //a sweater or vest will be assigned. Returns true if an outfit with tolerance or fewer conflicts is possible, false otherwise.
+    //Uses recursive backtracking to generate an outfit with the fewest number
+    //of conflicts possible. Non-weather appropriate clothing counts as a
+    //conflict here. If temp < 30, gloves, hat, and scarf will be assigned if
+    //possible. If temp < 65, either a sweater or vest will be assigned.
+    //Returns true if an outfit with tolerance or fewer conflicts is possible,
+    //false otherwise.
     private boolean recOutfit(Garment[] generatedOutfit, ArrayList<ArrayList<Garment>> domains, int i, int tolerance) {
 	Random r = new Random();
 	if(temperature > 30) {
@@ -150,6 +154,12 @@ public class AC3Solver {
 	    generatedOutfit[i] = options.remove(r.nextInt(options.size()));
 	    int appropriate = Wardrobe.isWeatherAppropriate(generatedOutfit[i], temperature) ? 0 : -1;
 	    if(Conflict.totalConflicts(generatedOutfit) <= tolerance+appropriate) {
+		if(vest && (i == Constants.SWEATER)){ //we've got a vest
+		    generatedOutfit[i] = null;
+		}
+		else if(!vest && (temperature < 65) && (i == Constants.VEST)){//we've got a sweater
+		    generatedOutfit[i] = null;
+		}
 		done = recOutfit(generatedOutfit, domains, i+1, tolerance+appropriate);
 	    }
 	}

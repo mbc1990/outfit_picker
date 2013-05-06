@@ -39,7 +39,7 @@ Grey tank top|shirt|grey|cotton|solid|very casual|short|tight
 Teal long sleeved shirt|shirt|teal|cotton|solid|casual|long|normal
 Purple, blue nylon flowy shirt|shirt|purple blue black|nylon|contrasting|snappy|medium|very loose
 Stretchy black pants|pants|black|cotton|solid|casual|long|tight
-Red cashmere sweater|shirt|red|wool|solid|dressy|long|loose
+Red cashmere sweater|sweater|red|wool|solid|dressy|long|loose
 Grey and white knitted sweater|sweater|grey white|wool|solid|snappy|long|normal
 Tan three quarter length sweater|sweater|tan|wool|solid|snappy|medium|normal
 Blue and white striped button up short sleeved shirt|shirt|blue white|linen|complimentary|casual|short|loose
