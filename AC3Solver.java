@@ -30,7 +30,27 @@ public class AC3Solver {
             domains.get(clone.attrs[Constants.BODY_PART]).add(clone); 
         }
 
-	//TODO: put <empty> garments in appropriate domains based on temperature
+	//put <empty> garments in appropriate domains based on temperature
+	/////Empty garments are created with an empty constructor and can be
+	//identified by checking garment.IsEmpty which is a public field.
+	Garment emptyGarment = new Garment();
+	if(temperature > 65){
+	    //must have a sweater or vest if it's cold enough
+	    Random rand = new Random();
+	    int r = rand.nextInt();
+	    if(r < .33){
+		domains.get(Constants.VEST).add(emptyGarment);
+	    }
+	    else{
+		domains.get(Constants.SWEATER).add(emptyGarment);
+	    }
+	}
+	if(temperature > 30){
+	    //it's really cold, must have hat, gloves and scarf
+		domains.get(Constants.HEAD).add(emptyGarment);
+		domains.get(Constants.NECK).add(emptyGarment);
+		domains.get(Constants.HANDS).add(emptyGarment);
+	}
         
         //initialize queue (add all arcs to the queue)
         //everything's connected!

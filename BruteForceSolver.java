@@ -22,21 +22,21 @@ public class BruteForceSolver {
     }
 
     protected Garment[] generateOutfit(int temperature) {
-    //  latest attempt should be an array of bodyparts (however many that is)
-        
-    //if the temperature is less than sixty, we'll incorporate a vest into the outfit with some probability
+	//  latest attempt should be an array of bodyparts (however many that is)
+
+	//if the temperature is cold, then we should have a sweater and gloves and hat and such
+	boolean outfitIsKindaWarm = temperature <= 65 ;
+	boolean outfitIsReallyWarm = temperature <= 30 ;
+
+	//incorporate a vest into the outfit with some probability
 	boolean outfitHasVest = false;
-	if(temperature < 55){
+	if(outfitIsKindaWarm){
 	    Random rand = new Random();
 	    int r = rand.nextInt();
 	    if(r < .33){
 		outfitHasVest = true;
 	    }
 	}
-
-	//if the temperature is cold, then we should have a sweater and gloves and hat and such
-	boolean outfitIsKindaWarm = temperature <= 65 ;
-	boolean outfitIsReallyWarm = temperature <= 30 ;
 
         //assuming there are only 10 body parts (this should perhaps be in constants so we can add more body parts in the future)
         Garment[] attempt = new Garment[Constants.NUM_BODY_PARTS];

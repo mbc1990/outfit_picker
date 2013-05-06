@@ -3,6 +3,7 @@ import java.util.*;
 public class Garment {
     //name of garment 
     protected String name;
+    public boolean isEmpty;
 
 
     //list of attributes that define the garment
@@ -11,6 +12,14 @@ public class Garment {
     public Garment(String name, int[] attrs) {
         this.name = name;
         this.attrs = attrs;
+	isEmpty = false;
+    }
+
+    //This creates and 'empty' garment for AC3
+    public Garment(){
+	name = "";
+	attrs = new int[Constants.ATTR_ARRAY_LEN];
+	isEmpty = true;
     }
 
     public String toString() {
